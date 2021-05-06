@@ -1,16 +1,24 @@
-const express = require('express')
-const app = express()
-const path = require('path')
+const express = require('express');
+const app = express();
+const path = require('path');
 const cors=require('cors');
 var fs = require('fs');
+const PORT = process.env.PORT || 3000;
+//process.env.PORT
 
+//process.env.NODE_ENV => production or undefined
 
 //middleware
 app.use(cors());
 app.use(express.json());//req.body
 
+if (process.env.NODE_ENV === "production"){
+  //serve static content
+  app.use(express.static(__dirname ))
+}
+
 //ROUTES
-app.use(express.static(__dirname ))//to public server
+//app.use(express.static(__dirname ))//to public server
 // app.use(express.static(__dirname + '/public'))//to public server
 //app.use('/build/', express.static(path.join(__dirname, 'node_modules/three/build')));//points to folder with three.module.js which html client will load
 //app.use('/jsm/', express.static(path.join(__dirname, 'node_modules/three/examples/jsm')));//extra useful Three.js modules
@@ -37,6 +45,6 @@ app.use(express.static(__dirname ))//to public server
 //      fs.writeFileSync('./public/cities1750.json',cities1750);
 
 
-app.listen(3000, () =>
-  console.log('Visit http://127.0.0.1:3000')
-);
+app.listen(PORT, () =>{
+  console.log(`Server is starting on port ${PORT}`);
+});
