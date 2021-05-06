@@ -187,9 +187,22 @@ function redrawScene() {
     createPlane();
     createTower();
     if (sceneParams.YEAR==="year_1750"){getData("/cities1750.json");}
-    if (sceneParams.YEAR==="year_1760"){getData("/cities1760.json");}
-    if (sceneParams.YEAR==="year_1770"){getData("/cities1770.json");}
-
+    if (sceneParams.YEAR==="year_1800"){getData("/cities1800.json");}
+    if (sceneParams.YEAR==="year_1830"){getData("/cities1830.json");}
+    if (sceneParams.YEAR==="year_1850"){getData("/cities1850.json");}
+    if (sceneParams.YEAR==="year_1860"){getData("/cities1860.json");}
+    if (sceneParams.YEAR==="year_1870"){getData("/cities1870.json");}
+    if (sceneParams.YEAR==="year_1880"){getData("/cities1880.json");}
+    if (sceneParams.YEAR==="year_1890"){getData("/cities1890.json");}
+    if (sceneParams.YEAR==="year_1900"){getData("/cities1900.json");}
+    if (sceneParams.YEAR==="year_1910"){getData("/cities1910.json");}
+    if (sceneParams.YEAR==="year_1930"){getData("/cities1930.json");}
+    if (sceneParams.YEAR==="year_1950"){getData("/cities1950.json");}
+    if (sceneParams.YEAR==="year_1970"){getData("/cities1970.json");}
+    if (sceneParams.YEAR==="year_2000"){getData("/cities2000.json");}
+    if (sceneParams.YEAR==="year_2005"){getData("/cities2005.json");}
+    if (sceneParams.YEAR==="year_2010"){getData("/cities2010.json");}
+    if (sceneParams.YEAR==="year_2013"){getData("/cities2013.json");}
     var light = new THREE.DirectionalLight(0xffffff, 1);
     light.position.setScalar(10);
     scene.add(light);
@@ -200,4 +213,4 @@ function redrawScene() {
 // ====================================================================
 // Create a new dat.GUI object
 var gui = new dat.GUI();
-gui.add(sceneParams,'YEAR',["year_1750","year_1760","year_1770"]).onChange(redrawScene);
+gui.add(sceneParams,'YEAR',["year_1750","year_1800","year_1830", "year_1850", "year_1860", "year_1870", "year_1880", "year_1890", "year_1900", "year_1910", "year_1930", "year_1950", "year_1970", "year_2000","year_2005","year_2010","year_2013"]).onChange(redrawScene);
