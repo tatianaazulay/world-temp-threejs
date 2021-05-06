@@ -9,7 +9,7 @@ scene.background = new THREE.Color( 'black' );
 //CREATE AND ADD TO THE SCENE THE PLANE
 function createPlane(){
   var planeGeometry = new THREE.PlaneGeometry(400, 200, 70,70);//width,height,widthSegments,heightSegments. 
-  var texture = new THREE.TextureLoader().load( './earth-map1.jpg' );
+  var texture = new THREE.TextureLoader().load( '/earth-map1.jpg' );
   var planeMaterial = new THREE.MeshLambertMaterial( { map: texture, wireframe: true} );
   var plane = new THREE.Mesh(planeGeometry, planeMaterial);
   // rotate and position the plane

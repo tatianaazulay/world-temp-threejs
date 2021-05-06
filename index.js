@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 //process.env.PORT
 
 //process.env.NODE_ENV => production or undefined
-
+app.use(express.static(__dirname ))
 //middleware
 app.use(cors());
 app.use(express.json());//req.body
