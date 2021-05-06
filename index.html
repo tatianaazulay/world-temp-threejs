@@ -31,7 +31,7 @@
 </head>
 <body>
     
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <!-- Name -->
     <p class="text-muted mr-5 mt-3" href="#">Tatiana Azulay </p>
 
@@ -42,18 +42,25 @@
           Check Projects Details here
         </a>
         <div class="dropdown-menu">
-          <a class="dropdown-item"><br><br>World tempertures three js visualization <br><br>Global Land Temperatures By Major City (GlobalLandTemperaturesByMajorCity.csv)<br>You cannot make a AJAX call to a local resource as the request is made using HTTP.
-  A workaround is to run a local webserver, serve up the file and make the AJAX call to localhost.
-  </a>
-          <a class="dropdown-item" >Another long desc2</a>
-          <a class="dropdown-item" href="#"><strong>Check Git hub Repo for code<strong></a>
+          <a class="dropdown-item"><br><br>World tempertures three js visualization <br>The purpose of this project is to explore the trend in global temperatures.<br></a>
+          <a class="dropdown-item"><br>The data for the project comes from Kaggle public datasets portal, where it can be downloaded by Country, State, Major City <br>under License <a class="ml-5 " target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0:</a><br><a class="ml-5 " target="_blank" href="https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data">https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data</a><br></a>
+          <a class="dropdown-item"><br>For this project I used Global Land Temperatures By Major City CSV file. I used SQL to filter 100 cities to be included in visualization and calculated average temperatures by year for each city. </a>
+          <a class="dropdown-item">I narrowed the number of years to be visualized to 17 years: 1750, 1800, 1830, 1850, 1860, 1870, 1880, 1890, 1900, 1910, 1930, 1950, 1970, 2000, 2005, 2010, 2013.</a>
+          <a class="dropdown-item">GUI control in the right top corner allows you to change the year to see the average temperatures in the cities in this particular year. </a>
+          <a class="dropdown-item"><br>The top of the yellow temperature tower in the middle of the map represents 30.73 in Celsius</a>
+          <a class="dropdown-item">White towers represent the location of cities (latitude and longtitude on the map) and the avarage yearly temperatures are represented by their heights.</a>
+          <a class="dropdown-item" href="#">Please note some years have fewer data points</a>
+          <a class="dropdown-item" href="#"><br><strong>Check Git hub Repo for code<strong></a>
         </div>
       </li>
       
     </ul>
     <!-- Project name -->
-    <p class="text-success mt-3" >Global Land Temperatures By 30 Cities in 30 Years</p>
+    <p class="text-success mt-3" >Global Land Temperatures By 100 Cities from 1750 till 2013</p>
+    <p class="text-warning mt-3" >The top of the yellow temperature tower in the middle represents 30.73 in Celsius</p>
 </nav>
+
+
     <!-- <script src="main.js"></script> -->
     <script src="main.js"></script>
 

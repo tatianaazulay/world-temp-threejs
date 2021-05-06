@@ -29,7 +29,7 @@ createPlane();
 //Dimentions of the temperature tower
 var baseWidth=5;
 var topWidth=3;
-var mainHeight=40;
+var mainHeight=90;
 var topHeight =10;
 // ====================================================================
 // ====================================================================
@@ -116,7 +116,7 @@ function getData(path){
       let city = myjson[i];
   
       let material = new THREE.MeshBasicMaterial( {color: 'white'} );
-      let geometry = new THREE.BoxGeometry( 1, city.temp, 1 );
+      let geometry = new THREE.BoxGeometry( 1, city.temp*100, 1 );
       let mesh = new THREE.Mesh( geometry, material );
       
       let latitude = city.lat;
@@ -126,14 +126,14 @@ function getData(path){
       let normalizedLongitude = 2.0 * (((longitude + 180.0) / 360.0) - 0.5);
       let x_location = normalizedLongitude * 200.0;
       let z_location = -(normalizedLatitude * 100.0);
-      let y_location= city.temp/2;//makes its y position half its height, so it keeps on the grid no matter what size.
+      let y_location= city.temp*100/2;//makes its y position half its height, so it keeps on the grid no matter what size.
       mesh.position.set(x_location, y_location, z_location);
       scene.add( mesh );
     }
   })
 }
 
-getData("/cities1750.json");
+getData("data/cities1750.json");
 // ====================================================================
 // ====================================================================
 // CAMERA
@@ -186,23 +186,23 @@ function redrawScene() {
     }
     createPlane();
     createTower();
-    if (sceneParams.YEAR==="year_1750"){getData("/cities1750.json");}
-    if (sceneParams.YEAR==="year_1800"){getData("/cities1800.json");}
-    if (sceneParams.YEAR==="year_1830"){getData("/cities1830.json");}
-    if (sceneParams.YEAR==="year_1850"){getData("/cities1850.json");}
-    if (sceneParams.YEAR==="year_1860"){getData("/cities1860.json");}
-    if (sceneParams.YEAR==="year_1870"){getData("/cities1870.json");}
-    if (sceneParams.YEAR==="year_1880"){getData("/cities1880.json");}
-    if (sceneParams.YEAR==="year_1890"){getData("/cities1890.json");}
-    if (sceneParams.YEAR==="year_1900"){getData("/cities1900.json");}
-    if (sceneParams.YEAR==="year_1910"){getData("/cities1910.json");}
-    if (sceneParams.YEAR==="year_1930"){getData("/cities1930.json");}
-    if (sceneParams.YEAR==="year_1950"){getData("/cities1950.json");}
-    if (sceneParams.YEAR==="year_1970"){getData("/cities1970.json");}
-    if (sceneParams.YEAR==="year_2000"){getData("/cities2000.json");}
-    if (sceneParams.YEAR==="year_2005"){getData("/cities2005.json");}
-    if (sceneParams.YEAR==="year_2010"){getData("/cities2010.json");}
-    if (sceneParams.YEAR==="year_2013"){getData("/cities2013.json");}
+    if (sceneParams.YEAR==="year_1750"){getData("data/cities1750.json");}
+    if (sceneParams.YEAR==="year_1800"){getData("data/cities1800.json");}
+    if (sceneParams.YEAR==="year_1830"){getData("data/cities1830.json");}
+    if (sceneParams.YEAR==="year_1850"){getData("data/cities1850.json");}
+    if (sceneParams.YEAR==="year_1860"){getData("data/cities1860.json");}
+    if (sceneParams.YEAR==="year_1870"){getData("data/cities1870.json");}
+    if (sceneParams.YEAR==="year_1880"){getData("data/cities1880.json");}
+    if (sceneParams.YEAR==="year_1890"){getData("data/cities1890.json");}
+    if (sceneParams.YEAR==="year_1900"){getData("data/cities1900.json");}
+    if (sceneParams.YEAR==="year_1910"){getData("data/cities1910.json");}
+    if (sceneParams.YEAR==="year_1930"){getData("data/cities1930.json");}
+    if (sceneParams.YEAR==="year_1950"){getData("data/cities1950.json");}
+    if (sceneParams.YEAR==="year_1970"){getData("data/cities1970.json");}
+    if (sceneParams.YEAR==="year_2000"){getData("data/cities2000.json");}
+    if (sceneParams.YEAR==="year_2005"){getData("data/cities2005.json");}
+    if (sceneParams.YEAR==="year_2010"){getData("data/cities2010.json");}
+    if (sceneParams.YEAR==="year_2013"){getData("data/cities2013.json");}
     var light = new THREE.DirectionalLight(0xffffff, 1);
     light.position.setScalar(10);
     scene.add(light);

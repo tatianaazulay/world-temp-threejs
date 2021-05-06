@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const cors=require('cors');
 var fs = require('fs');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 //process.env.PORT
 
 //process.env.NODE_ENV => production or undefined
@@ -24,13 +24,14 @@ if (process.env.NODE_ENV === "production"){
 //app.use('/jsm/', express.static(path.join(__dirname, 'node_modules/three/examples/jsm')));//extra useful Three.js modules
 // app.get('./public')
 
-
-// var data = fs.readFileSync('./public/1750.txt', 'utf8');
-// //console.log("hello from server", data);   
+// ====================================================================
+// ====================================================================
+///////THE CODE BELOW WAS USED TO GENERATE JSON FIES FROM TXT FILES
+// var data = fs.readFileSync('./data/cities2013.txt', 'utf8');
 // var cells = data.split('\r')
 // cells=cells.map(function (el) { return el.split(','); });//will split a string on commas to create an array of words
 // var keys = cells.shift();
-// //console.log(cells)
+// console.log(cells)
 //  //cities will be an array of objects
 //  var cities = cells.map(function (el) {
 //      var obj = {};
@@ -40,10 +41,11 @@ if (process.env.NODE_ENV === "production"){
 //      }  
 //      return obj;
 //  })
-//  //console.log(cities)//json object
+//  console.log(cities)//json object
 //  let cities1750= JSON.stringify(cities);
-//      fs.writeFileSync('./public/cities1750.json',cities1750);
-
+//      fs.writeFileSync('./data/cities2013.json',cities1750);
+// ====================================================================
+// ====================================================================
 
 app.listen(PORT, () =>{
   console.log(`Server is starting on port ${PORT}`);
