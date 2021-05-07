@@ -5,10 +5,10 @@ https://threejs-data-visualization.herokuapp.com/
 
 The data for the project comes from Kaggle public datasets portal, where it can be downloaded by Country, State or Major City under License CC BY-NC-SA 4.0: https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data
 
-For this project I used Global Land Temperatures By Major City CSV file. I used SQL to filter 100 cities to be included in the visualization and I calculated average temperatures by year for each city. I narrowed the number of years to be represented to 17 years.
+For this project I used Global Land Temperatures By Major City CSV file. I used SQL to filter 100 cities to be included in the visualization and I calculated average temperatures by year for each city. I narrowed the number of years to be represented to 16 years.
 
 This app uses three.js to render 3D meshed to represent average land temperatures for a year at certain locations.
-dat.gui dropdown control allowed to change the year for representation.
+dat.gui dropdown control allows to change the year for representation.
 
 How to install
 
