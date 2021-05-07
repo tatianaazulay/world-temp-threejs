@@ -12,21 +12,20 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());//req.body
 
+app.use(express.static(__dirname ))
+
 if (process.env.NODE_ENV === "production"){
   //serve static content
   app.use(express.static(__dirname ))
 }
 
 //ROUTES
-//app.use(express.static(__dirname ))//to public server
-// app.use(express.static(__dirname + '/public'))//to public server
-//app.use('/build/', express.static(path.join(__dirname, 'node_modules/three/build')));//points to folder with three.module.js which html client will load
-//app.use('/jsm/', express.static(path.join(__dirname, 'node_modules/three/examples/jsm')));//extra useful Three.js modules
-// app.get('./public')
+app.use(express.static(__dirname ))
+
 
 // ====================================================================
 // ====================================================================
-///////THE CODE BELOW WAS USED TO GENERATE JSON FIES FROM TXT FILES
+///////THE CODE BELOW WAS USED TO GENERATE JSON FILES FROM TXT FILES
 // var data = fs.readFileSync('./data/cities2013.txt', 'utf8');
 // var cells = data.split('\r')
 // cells=cells.map(function (el) { return el.split(','); });//will split a string on commas to create an array of words

@@ -121,12 +121,14 @@ function getData(path){
       
       let latitude = city.lat;
       let longitude = city.long;
-      //console.log(city.city, city.lat, city.long)
+      //latitude goes between -90 degrees and +90 degrees
       let normalizedLatitude = 2.0 * (((latitude + 90.0) / 180.0) - 0.5);
+      //longitude goes between -180 and +180
       let normalizedLongitude = 2.0 * (((longitude + 180.0) / 360.0) - 0.5);
+      //our x-axis boundaries are -200, to 200 and y-axis are -100 to 100. See our planeGeometry = new THREE.PlaneGeometry(400, 200, 70,70) 
       let x_location = normalizedLongitude * 200.0;
       let z_location = -(normalizedLatitude * 100.0);
-      let y_location= city.temp*100/2;//makes its y position half its height, so it keeps on the grid no matter what size.
+      let y_location= city.temp*100/2;//our plane makes object's y-position half its height, so y can not be zero if we want the object be on top of the plane
       mesh.position.set(x_location, y_location, z_location);
       scene.add( mesh );
     }
@@ -198,7 +200,6 @@ function redrawScene() {
     if (sceneParams.YEAR==="year_1910"){getData("data/cities1910.json");}
     if (sceneParams.YEAR==="year_1930"){getData("data/cities1930.json");}
     if (sceneParams.YEAR==="year_1950"){getData("data/cities1950.json");}
-    if (sceneParams.YEAR==="year_1970"){getData("data/cities1970.json");}
     if (sceneParams.YEAR==="year_2000"){getData("data/cities2000.json");}
     if (sceneParams.YEAR==="year_2005"){getData("data/cities2005.json");}
     if (sceneParams.YEAR==="year_2010"){getData("data/cities2010.json");}
@@ -213,4 +214,4 @@ function redrawScene() {
 // ====================================================================
 // Create a new dat.GUI object
 var gui = new dat.GUI();
-gui.add(sceneParams,'YEAR',["year_1750","year_1800","year_1830", "year_1850", "year_1860", "year_1870", "year_1880", "year_1890", "year_1900", "year_1910", "year_1930", "year_1950", "year_1970", "year_2000","year_2005","year_2010","year_2013"]).onChange(redrawScene);
+gui.add(sceneParams,'YEAR',["year_1750","year_1800","year_1830", "year_1850", "year_1860", "year_1870", "year_1880", "year_1890", "year_1900", "year_1910", "year_1930", "year_1950", "year_2000","year_2005","year_2010","year_2013"]).onChange(redrawScene);
