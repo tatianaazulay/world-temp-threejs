@@ -13,6 +13,7 @@ dat.gui dropdown control allows to change the year for representation.
 How to install
 
 You can install it locally (node js and npm are required):
+clone the repo
 cd to world-temp-threejs folder
 
 run
