@@ -104,7 +104,6 @@ createTower();
 // ====================================================================
 // ====================================================================
 //CREATE AND ADD TO THE SCENE 3D MESHES FOR REPRESENTING DATA POINTS
-//var path;//global variable to store path for the data to be rendered
 
 //this function fetches data from a json file and adds to the scene 3D meshes representing this data
 function getData(path){
