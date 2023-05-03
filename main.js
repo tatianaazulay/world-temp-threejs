@@ -1,7 +1,3 @@
-// Three.js visualisation of world temperatures written by Tatiana Azulay
-// ====================================================================
-// ====================================================================
-// SCENE
 var scene = new THREE.Scene();
 scene.background = new THREE.Color( 'black' );
 // ====================================================================
